@@ -1,11 +1,12 @@
 {
     "name": "Build a LLM from scratch - Dev Environment",
     "workspaceFolder": "/workspaces/build-a-llm-from-scratch",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "runArgs": [
         "--network=host",
+        "--gpus=all",
         "--label",
         "com.centurylinklabs.watchtower.enable=false",
         "--env",
