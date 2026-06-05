@@ -46,7 +46,7 @@ dev = [
     "mkdocs-awesome-nav",
     "pymdown-extensions",
     "mkdocs-rtd-dropdown",
-    "nbdev>=2.4.6"    
+    "nbdev>=2.4.6"
 ]
 
 [project.urls]
@@ -74,6 +74,20 @@ dev = ["pytest",]
 
 # Configuration Ruff - Linter et formateur Python moderne
 [tool.ruff]
+# Longueur de ligne (cohérent avec black)
+line-length = 88
+
+# Fichiers à exclure
+extend-exclude = [
+    "data/*",
+    "models/*",
+    "logs/*",
+    ".jupyter/*",
+]
+
+# Version Python cible
+target-version = "py312"
+
 # Règles activées
 extend-select = [
     "E",      # pycodestyle errors
@@ -96,23 +110,8 @@ extend-select = [
 ignore = [
     "E501",   # Line too long (black/ruff format s'en occupe)
     "B905",   # zip() sans strict= (Python 3.10+)
-    "PD901",  # Avoid `df` as variable name (commun en DS)
     "RET504", # Assign + return -> return direct (parfois moins lisible)
 ]
-
-# Longueur de ligne (cohérent avec black)
-line-length = 88
-
-# Fichiers à exclure
-extend-exclude = [
-    "data/*",
-    "models/*", 
-    "logs/*",
-    ".jupyter/*",
-]
-
-# Version Python cible
-target-version = "py312"
 
 [tool.ruff.format]
 # Style de formatage
@@ -130,6 +129,7 @@ lines-after-imports = 2
 [tool.ruff.lint.pep8-naming]
 # Convention de nommage adaptée Data Science
 classmethod-decorators = ["classmethod", "pydantic.validator"]
+extend-ignore-names = ["X"]
 
 [tool.ruff.lint.per-file-ignores]
 # Règles spécifiques par type de fichier
@@ -159,7 +159,7 @@ warn_unreachable = true
 
 # Configuration stricte progressive
 disallow_any_generics = false        # Autorisé au début
-disallow_untyped_calls = false       # Autorisé au début  
+disallow_untyped_calls = false       # Autorisé au début
 disallow_untyped_defs = false        # Autorisé au début
 disallow_incomplete_defs = true      # Fonctions partiellement typées interdites
 disallow_untyped_decorators = false  # Autorisé au début
@@ -174,7 +174,7 @@ follow_imports = "normal"
 [[tool.mypy.overrides]]
 module = [
     "matplotlib.*",
-    "seaborn.*", 
+    "seaborn.*",
     "sklearn.*",
     "scipy.*",
     "plotly.*",
@@ -187,7 +187,7 @@ module = "notebooks.*"
 ignore_errors = true
 
 # Configuration tests
-[[tool.mypy.overrides]] 
+[[tool.mypy.overrides]]
 module = [
     "tests.*",
     "pytest",
