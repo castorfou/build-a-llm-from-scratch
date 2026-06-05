@@ -1,6 +1,7 @@
 site_name: Build a LLM from scratch
 site_description: note livre de Sebastian Raschka
 site_url: https://castorfou.github.io/build-a-llm-from-scratch
+repo_url: https://github.com/castorfou/build-a-llm-from-scratch
 use_directory_urls: true
 
 # Exclude internal directories from documentation
