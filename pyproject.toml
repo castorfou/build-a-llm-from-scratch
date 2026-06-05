@@ -20,12 +20,14 @@ classifiers = [
 
 dependencies = [
     "ipykernel",
-    "ipywidgets", 
+    "ipywidgets",
     "python-dotenv",
     "gitpython",
     "pandas",
     "numpy",
     "matplotlib",
+    "tiktoken>=0.13.0",
+    "torchvision>=0.27.0",
 ]
 
 [project.optional-dependencies]
