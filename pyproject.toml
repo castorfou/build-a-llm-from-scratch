@@ -88,6 +88,7 @@ extend-exclude = [
 # Version Python cible
 target-version = "py312"
 
+[tool.ruff.lint]
 # Règles activées
 extend-select = [
     "E",      # pycodestyle errors
@@ -110,6 +111,7 @@ extend-select = [
 ignore = [
     "E501",   # Line too long (black/ruff format s'en occupe)
     "B905",   # zip() sans strict= (Python 3.10+)
+    "N801",   # Autorise les noms de classes pédagogiques comme SelfAttention_v1
     "RET504", # Assign + return -> return direct (parfois moins lisible)
 ]
 
